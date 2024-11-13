@@ -14,4 +14,4 @@ The demo scene is located in `Assets/Scenes/show`. First, connect your PC and VR
 
 ### Parameter modification
 
-If you want to modify the trigger parameters for Magic-Tap, please select the `AcceStimulate` Script attached to the `/show/showball/magic` GameObject in the demo scene. You can then adjust the parameters on this script to modify Magic-Tap's trigger parameters, where `Ab` represents `α` and `Vbc `represents `β`.
+If you want to modify the trigger parameters for Magic-Tap, please select the `AcceStimulate` Script attached to the `/show/showball/magic` GameObject in the demo scene. You can then adjust the parameters on this script to modify Magic-Tap's trigger parameters. As in the paper, `alpha` represents the `acceleration` threshold parameter, and `beta` represents the `speed` threshold parameter.

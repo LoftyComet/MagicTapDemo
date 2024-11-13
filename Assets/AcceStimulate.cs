@@ -19,7 +19,7 @@ using UnityEngine.Rendering;
 ///     WaitTime = 0.5f;
 ///     HesTime = 0.1f;
 ///     Vb = 0.2f
-///     Ab = -2;
+///     Alpha = -2;
 ///     Vupper = 1f;
 /// </summary>
 /// <param name="Delay">Bool for Time Delay mode, set manually</param>
@@ -44,8 +44,8 @@ using UnityEngine.Rendering;
 /// <param name="a">Acceleration for current frame</param>
 /// <param name="ac">Acceleration recorded when recording the condition</param>
 /// <param name="Vb">Velocity bound for Acce and Velo mode's A condition</param>
-/// <param name="Vbc">Velocity bound for Acce and Velo mode's C condition</param>
-/// <param name="Ab">Acceleration bound for Acce mode's B condition</param>
+/// <param name="Beta">Velocity bound for Acce and Velo mode's C condition</param>
+/// <param name="Alpha">Acceleration bound for Acce mode's B condition</param>
 /// <param name="Abc">Acceleration bound for Acce mode's C condition</param>
 /// <param name="Vupper">Velocity bound for Acce mode's B condition</param>
 /// <param name="Hesitated">Bool set true if judged as hesitated</param>
@@ -62,7 +62,6 @@ using UnityEngine.Rendering;
 /// <param name="IndexDistalPose">Pose for current Distal joint index finger pose</param>
 /// <param name="IndexMiddlePose">Pose for current Middle joint index finger pose</param>
 /// <param name="Bounds">Object's Bounds, to manipulate the collider</param>
-/// <param name="boundCenter">Object bounds' center point</param>
 /// <param name="Debugger">Dynamic linking text debugger shower: Row 1 = velocity, Row 2 = Acceleration, ABC = trigger condition</param>
 /// <param name="ShowDebug">Bool set true if want to show debugger</param>
 /// <param name="condition">Trigger condition in the IxDL: A B or C</param>
@@ -70,28 +69,38 @@ using UnityEngine.Rendering;
 /// <param name="InMate">Material when the finger is in the button</param>
 public class AcceStimulate : MonoBehaviour
 {
-    public UnityEvent<bool> InEvent_Bool;
     public UnityEvent InEvent, BeforeHesEvent, HesEvent, OutEvent, AfterOutEvent;
-    public float UpdateT, WaitTime, PrepTime, HesTime, vpre, v, vc, apre, a, ac, Vb, Vbc, Ab, Vupper;
-    public bool HighLighted, Hesitated, Init, Delay, Fast, FastForKeyboard, Acce, AcceOnly, AcceOld, Velo, Prepared, Entered, CloseSti, Invoked, bigger, smaller, curBigger;
-    public MixedRealityPose IndexTipPose1;
-    public MixedRealityPose IndexTipPose2;
-    public MixedRealityPose IndexDistalPose;
-    public MixedRealityPose IndexMiddlePose;
+    [Header("Parameter Modification")]
+    public float Beta;
+    public float Alpha;
+    [Header("Set Whether to Use Magic-Tap Triggering")]
+    public bool Acce;
+    
+    bool HighLighted, Hesitated, Init, FastForKeyboard, Prepared, Entered, bigger, smaller, curBigger;
+    MixedRealityPose IndexTipPose1;
+    MixedRealityPose IndexTipPose2;
+    MixedRealityPose IndexDistalPose;
+    MixedRealityPose IndexMiddlePose;
     Bounds Bounds;
-    public Vector3 boundCenter;
+
+    [Header("Debug Mode Settings")]
     public TMP_Text[] Debugger;
     public bool showDebug;
     public char condition;
     public Material OutMate, InMate, HLMate;
     public MeshRenderer meshRenderer;
     public S2SetVariable ParentSSV;
-    public float Distance;
+    float Distance;
 
     // Set Condition C's bound to Acceleration instead of Velocity.
-    public bool useAcce = false;
+    bool useAcce = false;
+    public bool Delay, Fast, AcceOnly, AcceOld, Velo, CloseSti, Invoked;
     public float AccelerationBoundForConditionC;
 
+    [Header("Recorded Data")]
+    public float UpdateT, WaitTime, PrepTime, vpre, v, vc, apre, a, ac;
+    
+    private float HesTime, Vb, Vupper;
     void Start()
     {
         condition = 'N';
@@ -110,13 +119,14 @@ public class AcceStimulate : MonoBehaviour
         v = float.MaxValue;
         apre = float.MaxValue;
         a = float.MaxValue;
-
+        Vupper = 300;
+        Vb = 0.02f;
+        HesTime = 0.06f;
         Bounds = gameObject.GetComponent<Collider>().bounds;
         meshRenderer = gameObject.GetComponent<MeshRenderer>();
         ParentSSV = transform.parent.GetComponent<S2SetVariable>();
 
         InEvent ??= new UnityEvent();
-        InEvent_Bool ??= new UnityEvent<bool>();
         BeforeHesEvent ??= new UnityEvent();
         HesEvent ??= new UnityEvent();
         OutEvent ??= new UnityEvent();
@@ -376,7 +386,7 @@ public class AcceStimulate : MonoBehaviour
     {
         if (vpre != float.MaxValue && apre != float.MaxValue)
         {
-            if ((v < Vupper && a < Ab))
+            if ((v < Vupper && a < Alpha))
             {
                 condition = 'B';
                 return true;
@@ -399,7 +409,7 @@ public class AcceStimulate : MonoBehaviour
     {
         if (vpre != float.MaxValue && apre != float.MaxValue)
         {
-            if (v < Vupper && a < Ab)
+            if (v < Vupper && a < Alpha)
             {
                 ac = a;
                 vc = v;
@@ -441,7 +451,7 @@ public class AcceStimulate : MonoBehaviour
         else
         {
             print("Using Acceleration for condition C");
-            if (v > Vbc)
+            if (v > Beta)
             {
                 condition = 'C';
                 return true;
@@ -461,7 +471,7 @@ public class AcceStimulate : MonoBehaviour
     {
         if (vpre != float.MaxValue && apre != float.MaxValue)
         {
-            if ((v < Vupper && a < Ab))
+            if ((v < Vupper && a < Alpha))
             {
                 condition = 'B';
                 return true;
