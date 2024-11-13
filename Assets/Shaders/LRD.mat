@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LRD
+  m_Shader: {fileID: -6465566751694194690, guid: a842d4b2e6ef14946812baa7efe55323, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_108c00a106f2418cbd3454273cd480ee: 3
+    - Vector1_4f9f01426953405b80a1dbd3815992cd: 0
+    - Vector1_68814eca8c994e70a0cd6fb2fe0ab40c: 0.34
+    - Vector1_eb62b6f933d54d1ca042082a14c72342: 0.51
+    - _Dissolve: 0
+    - _FP: 0.98
+    m_Colors:
+    - Color_2ae9eebfbc6c48e89aa4f30d3958b28f: {r: 0.02745098, g: 0.02745098, b: 0.05882353, a: 0}
+    - _Color: {r: 0, g: 0, b: 0, a: 0.3529412}
+  m_BuildTextureStacks: []

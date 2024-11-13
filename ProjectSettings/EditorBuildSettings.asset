@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Scenes/Study1.unity
+    guid: a29e3526062243546b9d249abdb323a0
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Scenes/keyboard/KeyboardS.unity
+    guid: ef4265ab0775e4e4ab1aa1763c0a87e3
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Scenes/Study3/study3.unity
+    guid: 3073b687c93a9bd4abd8041fe5b82c4d
+  - enabled: 1
+    path: Assets/Scenes/show.unity
+    guid: 516ffbf7bb0eff04f9a58d8293cf2e02
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 10926f304a59325418a14aef890d8831, type: 2}
+    com.unity.input.settings: {fileID: 11400000, guid: a76364285d1cdbb43a5c6852d9c4db64, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: de773ea752402334b8f92d9eebd8a528, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 11fe22d37de2b2e4bb0522de077470a7, type: 2}
