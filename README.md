@@ -1,3 +1,13 @@
+<!--
+ * @Author: LoftyComet 1277173875@qq。
+ * @Date: 2025-03-10 12:24:56
+ * @LastEditors: LoftyComet 1277173875@qq。
+ * @LastEditTime: 2025-03-10 15:55:46
+ * @FilePath: \MagicTapDemo\README.md
+ * @Description: 
+ * 
+ * Copyright (c) 2025 by ${git_name_email}, All Rights Reserved. 
+-->
 ## **Magic-Tap: A Kinematics-Driven Virtual Hand Selection Technique in AR/VR**
 
 ### Basic Information
@@ -28,7 +38,7 @@ Please download `Unity Hub` and install `Unity 2020.3.37f1c1`. Clone the project
 
 The demo scene is located in `Assets/Scenes/show`. First, connect your PC and VR headset using a data cable. Launch `Quest Link` on your PC while simultaneously accessing the` Quest Link` interface in your VR headset. Then locate the scene and click the `Play` button in Unity to run it. Upon successfully entering the 3D scene, you will see two vertically aligned spheres in front of you. Interact with the lower sphere using your right index finger. If triggered successfully, the upper sphere will change color and provide audio feedback.
 
-![demo](static\demo.gif)
+![demo](https://github.com/LoftyComet/MagicTapDemo/blob/master/static/demo.gif)
 
 ### Parameter modification
 
