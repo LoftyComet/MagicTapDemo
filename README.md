@@ -1,22 +1,14 @@
-<!--
- * @Author: LoftyComet 1277173875@qq。
- * @Date: 2025-03-10 12:24:56
- * @LastEditors: LoftyComet 1277173875@qq。
- * @LastEditTime: 2025-03-10 15:55:46
- * @FilePath: \MagicTapDemo\README.md
- * @Description: 
- * 
- * Copyright (c) 2025 by ${git_name_email}, All Rights Reserved. 
--->
-## **Magic-Tap: A Kinematics-Driven Virtual Hand Selection Technique in AR/VR**
+# **Magic-Tap: A Kinematics-Driven Virtual Hand Selection Technique in AR/VR**
 
-### Basic Information
+## Basic Information
 
 **Project Name**: `Magic-Tap: A Kinematics-Driven Virtual Hand Selection Technique in AR/VR`
 
 **Authors**: `Ruyang Yu`, `Yixuan Liu`, `Zijian Wu`, and `Tao Luo`
 
-### Dependencies
+<br/>
+
+## Dependencies
 
 **Programming Language**: [C#](https://learn.microsoft.com/zh-cn/dotnet/csharp/)
 
@@ -30,19 +22,58 @@
 
 **HMD**: Quest 2, Quest Pro or Quest 3
 
-### Configure the Environment
+<br/>
 
-Please download `Unity Hub` and install `Unity 2020.3.37f1c1`. Clone the project on GitHub and open it in Unity Hub using the corresponding Unity version. The MRTK components required for the project have already been configured, and this project can be run directly. If you need to edit code, please download `Visual Studio` or other IDEs for C# development. If using `Visual Studio` for development, please install the `"Game Development with Unity"` workload in the Visual Studio Installer.
+## Install Unity & Development Tools
 
-### Run the project
+1. Download **Unity Hub** and install **Unity 2020.3.37f1c1**.
+2. Clone the project from **GitHub** and open it in **Unity Hub** using the correct Unity version.
+3. The required **MRTK components** are already configured, so the project can be run directly.
+4. If you need to modify the code:
 
-The demo scene is located in `Assets/Scenes/show`. First, connect your PC and VR headset using a data cable. Launch `Quest Link` on your PC while simultaneously accessing the` Quest Link` interface in your VR headset. Then locate the scene and click the `Play` button in Unity to run it. Upon successfully entering the 3D scene, you will see two vertically aligned spheres in front of you. Interact with the lower sphere using your right index finger. If triggered successfully, the upper sphere will change color and provide audio feedback.
+   - Install **Visual Studio** or another **C#** development IDE.
+   - If using **Visual Studio**, install the **"Game Development with Unity"** workload via the **Visual Studio Installer**.
+
+<br/>
+
+## Run the Project
+
+#### **Setup Instructions**
+
+1. Connect your **PC** and **VR headset** using a data cable.
+2. Launch **Quest Link** on your PC and enter the **Quest Link interface** in your VR headset.
+3. Open the scene in **Unity** and click the **Play** button to run it.
+
+#### **Interaction Guide**
+
+Once inside the 3D scene, you will see **two vertically aligned balls** in front of you.
+
+- Use your **right index finger** to interact with the **blue ball** at the bottom.
+- When successfully triggered:
+  - The **color-change ball** above will change color.
+  - The system will provide **audio feedback**.
+
+> ⚠ **Note:** This program is interactive and relies on real-time tracking of virtual hand  movements to detect user intent. 
+> A pre-scripted playback is not possible. The animation below demonstrates the interaction.
 
 ![demo](https://github.com/LoftyComet/MagicTapDemo/blob/master/static/demo.gif)
 
-### Parameter modification
+<br/>
 
-If you want to modify the trigger parameters for Magic-Tap, please select the `AcceStimulate` Script attached to the `/show/showball/magic` GameObject in the demo scene. You can then adjust the parameters on this script to modify Magic-Tap's trigger parameters. As in the paper, `alpha` represents the `acceleration` threshold parameter, and `beta` represents the `speed` threshold parameter.
+## Modify Parameters
 
-### License
-This software is available for free non-commercial and academic use only. Commercial use requires permission from the authors.
+If you want to modify the configuration parameters for **Magic-Tap**, follow these steps:
+
+1. Locate the **AcceStimulate Script** attached to the following GameObject in the demo scene:
+   /show/showball/magic
+2. Adjust the script parameters:
+
+- **Alpha** → Acceleration threshold parameter.
+- **Beta** → Speed threshold parameter.
+
+<br/>
+
+## License
+
+This software is available for free non-commercial and academic use only.  
+Commercial use requires explicit permission from the authors.
