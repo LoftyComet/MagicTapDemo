@@ -1,10 +1,12 @@
 # **Magic-Tap: A Kinematics-Driven Virtual Hand Selection Technique in AR/VR**
 
+<br/>
+
 ## Basic Information
 
-**Project Name**: `Magic-Tap: A Kinematics-Driven Virtual Hand Selection Technique in AR/VR`
+**Project Name**: **Magic-Tap: A Kinematics-Driven Virtual Hand Selection Technique in AR/VR**
 
-**Authors**: `Ruyang Yu`, `Yixuan Liu`, `Zijian Wu`, and `Tao Luo`
+**Authors**: **Ruyang Yu**, **Yixuan Liu**, **Zijian Wu**, and **Tao Luo**
 
 <br/>
 
@@ -42,7 +44,7 @@
 
 1. Connect your **PC** and **VR headset** using a data cable.
 2. Launch **Quest Link** on your PC and enter the **Quest Link interface** in your VR headset.
-3. Open the scene in **Unity** and click the **Play** button to run it.
+3. Open the scene (`Assets/Scenes/show`) in **Unity** and click the **Play** button to run it.
 
 #### **Interaction Guide**
 
@@ -53,8 +55,8 @@ Once inside the 3D scene, you will see **two vertically aligned balls** in front
   - The **color-change ball** above will change color.
   - The system will provide **audio feedback**.
 
-> ⚠ **Note:** This program is interactive and relies on real-time tracking of virtual hand  movements to detect user intent. 
-> A pre-scripted playback is not possible. The animation below demonstrates the interaction.
+> **Note:** This program is interactive and relies on real-time tracking of virtual hand  movements to detect user intent. 
+> A pre-scripted playback is not possible. We provide the following demo to showcase the interaction process.
 
 ![demo](https://github.com/LoftyComet/MagicTapDemo/blob/master/static/demo.gif)
 
@@ -65,7 +67,7 @@ Once inside the 3D scene, you will see **two vertically aligned balls** in front
 If you want to modify the configuration parameters for **Magic-Tap**, follow these steps:
 
 1. Locate the **AcceStimulate Script** attached to the following GameObject in the demo scene:
-   /show/showball/magic
+   `/show/showball/magic`
 2. Adjust the script parameters:
 
 - **Alpha** → Acceleration threshold parameter.
