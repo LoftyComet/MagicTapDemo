@@ -8,6 +8,8 @@
 
 **Authors**: **Ruyang Yu**, **Yixuan Liu**, **Zijian Wu**, and **Tao Luo**
 
+**DOI**: [10.1109/TVCG.2025.3549044](10.1109/TVCG.2025.3549044)
+
 <br/>
 
 ## Dependencies
